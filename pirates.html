@@ -33,15 +33,15 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1 style="font-family: cursive;color:violet">Find the treasure by Mahitha sri kurri</h1>
+        <h1 style="font-family: cursive;color:rgb(101, 42, 101)">Find the treasure by Mahitha sri kurri</h1>
         <br>
         <div class="container-fluid">
             
-            <div class="d-inline p-4 bg-primary" id = "locations">Number of locations checked is zero.</div>
-            <div class="d-inline p-4 bg-info" style="color: green;" id = "penalty">Penalty is zero.</div>
-            <div class="d-inline p-4 bg-warning"style="color: green;">Click for help.</div><br><br>
-            <div class="d-inline p-4 bg-danger" style="color: green;" id = "help">Help report</div>
-            <div class="d-inline p-4 bg-success">Click on the locations to search for treasure, beware the traps</div>
+            <div class="d-inline p-2 bg-primary" id = "locations">Number of locations checked is zero.</div>
+            <div class="d-inline p-2 bg-info" style="color: green;" id = "penalty">Penalty is zero.</div>
+            <div class="d-inline p-2 bg-warning"style="color: green;">Click for help.</div><br><br>
+            <div class="d-inline p-2 bg-danger" style="color: green;" id = "help">Help report</div>
+            <div class="d-inline p-2 bg-success">Click on the locations to search for treasure, beware the traps</div>
             <br>
             <br>
             <div class="row">
@@ -157,7 +157,7 @@
                 checkCount++;
                 document.getElementById("locations").innerHTML = "Number of locations checked is " + checkCount + ".";
                 document.getElementById("penalty").innerHTML = "Penalty is " + penalty + ".";
-                lastCheck = location;
+                lastCheck = position;
             }
         }
         function help() {
