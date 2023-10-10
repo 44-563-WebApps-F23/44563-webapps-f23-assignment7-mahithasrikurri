@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reaction page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: beige;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      color: darkmagenta;
+      text-shadow: 2px 2px 2px rgb(89, 36, 36);
+    }
+
+    div {
+      font-weight: bold;
+      margin: 10px;
+      font-size: 16px;
+      padding: 5px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: ivory;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mahitha sri Kurri speed check</h1>
+  <br>
+  <div id="target">Your time</div>
+  <div id="counter">Count</div>
+  <button type="button" class="btn btn-secondary" onclick="startTime()" style="color:chocolate;"><b>Start Timer</b></button>
+  <button type="button" class="btn btn-primary" onclick="recordTime()"><b>React</b></button>
+  <script>
+   let reactTime = Math.floor((Math.random() * 10) + 2);
+
+function recordTime() {
+  reactTime = Date.now()
+  console.log(reactTime)
+}
+
+
+function startTime() {
+  for (let i = 0; i < 9; i++) {
+    setTimeout(function () {
+      document.getElementById('counter').innerHTML = "Count: " + i
+    }, ((8 - i) * 1000))
+  }
+
+  setTimeout(() => {
+    if (reactTime == undefined) {
+      document.getElementById("target").innerHTML = "Too Slow"
+    } else {
+      let endTime = Date.now()
+      let elapsedTime = endTime - reactTime
+      document.getElementById("target").innerHTML = "Time was " + elapsedTime
+    }
+
+  }, 8000)
+
+}
+</script>
+</body>
+</html>
