@@ -10,21 +10,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
     body {
-      background-color: beige;
+      background-color: rgb(226, 226, 46);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
+      text-align: left;
     }
 
     h1 {
-      text-align: center;
-      margin-top: 30px;
+      text-align: left;
+      margin-top: 20px;
       font-weight: bold;
       color: darkmagenta;
       text-shadow: 2px 2px 2px rgb(89, 36, 36);
     }
 
     div {
-      font-weight: bold;
+      font-weight: bolder;
       margin: 10px;
       font-size: 16px;
       padding: 5px;
@@ -40,8 +40,8 @@
   <br>
   <div id="target">Your time</div>
   <div id="counter">Count</div>
-  <button type="button" class="btn btn-secondary" onclick="startTime()" style="color:chocolate;"><b>Start Timer</b></button>
-  <button type="button" class="btn btn-primary" onclick="recordTime()"><b>React</b></button>
+  <button type="button" class="btn btn-link" onclick="startTime()" style="color:chocolate;"><b>Start Timer</b></button>
+  <button type="button" class="btn btn-warning" onclick="recordTime()"><b>React</b></button>
   <script>
   let reactTime = Math.floor((Math.random() * 10) + 2);
   function recordTime() {
