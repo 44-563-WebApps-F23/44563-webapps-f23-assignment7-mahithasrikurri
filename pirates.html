@@ -132,26 +132,26 @@
         </div>
         <script>
             var ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"]
-        var checkCount = 0;
+            var checkCount = 0;
         var penalty = 0;
         var lastCheck = 0;
-        var treasureLocation = 5;
-        var trapLocation = 18;
+        var treasureLocation = Math.floor(Math.random() * 25);
+        var trapLocation = Math.floor(Math.random() * 25);
         var gameOver = false;
-        function check(location) {
+        function check(position) {
             if (gameOver != true) {
-                if (location == treasureLocation) {
-                    document.getElementById(ids[location]).setAttribute("src", "Tressure_image.png");
+                if (position == treasureLocation) {
+                    document.getElementById(ids[position]).setAttribute("src", "Tressure_image.png");
                     gameOver = true;
                     penalty = penalty - 3;
                 }
-                else if (location == trapLocation) {
-                    document.getElementById(ids[location]).setAttribute("src", "Trap_image.png");
+                else if (position == trapLocation) {
+                    document.getElementById(ids[position]).setAttribute("src", "Trap_image.png");
                     gameOver = true;
                     penalty = penalty + 4;
                 }
                 else {
-                    document.getElementById(ids[location]).setAttribute("src", "piratess_image.png");
+                    document.getElementById(ids[position]).setAttribute("src", "piratess_image.png");
                     penalty = penalty + 1;
                 }
                 checkCount++;
@@ -161,29 +161,29 @@
             }
         }
         function help() {
-            let lastRow = parseInt((lastCheck / 5), 10);
-            let treasureRow = parseInt((treasureLocation / 5), 10);
+            let L_Row = parseInt((lastCheck / 5), 10);
+            let T_Row = parseInt((treasureLocation / 5), 10);
             let result = " ";
-            let lastCol = lastCheck % 5;
-            let treasureCol = treasureLocation % 5;
-            let rowDifference = 0;
-            let colDifference = 0;
-            if (treasureRow > lastRow) {
-                rowDifference = treasureRow - lastRow;
+            let L_Col = lastCheck % 5;
+            let T_Col = treasureLocation % 5;
+            let r_Difference = 0;
+            let c_Difference = 0;
+            if (T_Row > L_Row) {
+                r_Difference = T_Row - L_Row;
             }
             else {
-                rowDifference = lastRow - treasureRow;
+                r_Difference = L_Row - T_Row;
             }
-            if (treasureCol > lastCol) {
-                colDifference = treasureCol - lastCol;
+            if (T_Col > L_Col) {
+                c_Difference = T_Col - last_Col;
             }
             else {
-                colDifference = lastCol - treasureCol;
+                c_Difference = L_Col - T_Col;
             }
-            if (lastRow - treasureRow == 1 || lastRow - treasureRow == 1 || lastCol - treasureCol == 1 || lastCol - treasureCol == -1) {
+            if (L_Row - T_Row == 1 || L_Row - T_Row == 1 || L_Col - T_Col == 1 || L_Col - T_Col == -1) {
                 result = "Can smell it";
             }
-            else if (rowDifference + colDifference == 2) {
+            else if (r_Difference + c_Difference == 2) {
                 result = "Close Matie";
             }
             else {
@@ -193,6 +193,17 @@
             document.getElementById("penalty").innerHTML = "Penalty is " + penalty + ".";
             document.getElementById("help").innerHTML = result;
         }
+        function resetGame() {
+            treasureLocation = Math.floor(Math.random() * 25);
+            trapLocation = Math.floor(Math.random() * 25);
+            checkCount = 0
+            penalty = 0
+            document.getElementById("locations").innerHTML = "Number of locations checked is zero";
+            document.getElementById("penalty").innerHTML = "Penalty is zero";
+            for (let i = 0; i < 25; i++) {
+                document.getElementById(ids[i]).src = "Tressurehuntimage.png";
+            }
+        }S
     </script>
 </body>
 
