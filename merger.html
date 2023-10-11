@@ -74,13 +74,13 @@
 		<div class="merger">row item 3</div>
 	</div>
 	<br>
-	<button type="button" class="button" onclick="makeNewDiv()"><b>Add end</b></button>
+	<button type="button" class="button" onclick="NewDiv()"><b>Add end</b></button>
 	<button type="button" class="button" onclick="addFront()"><b>Add front</b></button>
 	<button type="button" class="button" onclick="remove()"><b>Remove</b></button>
 	<button type="button" class="button" onclick="swap()"><b>Swap</b></button>
 </body>
 <script>
-	function makeNewDiv() {
+	function NewDiv() {
 		let component = document.createElement("div");
 		let value = document.getElementById("inputElement").value;
 		component.style.color = "black";
