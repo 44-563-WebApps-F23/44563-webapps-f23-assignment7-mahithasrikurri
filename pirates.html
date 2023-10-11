@@ -52,12 +52,15 @@
     </head>
     <body>
         <h1 style="font-family: cursive;color:rgb(101, 42, 101)">Find the treasure by Mahitha sri kurri</h1>
-        <p class="lead"><b>Click on the locations to search for treasure, beware the traps</b></p>
-        <p id="locations" class="lead" style="background-color:crimson"><b>Number of locations checked is zero.</b></p>
-        <p id="penalty" class="lead" style="background-color:darkmagenta"><b>Penalty is zero.</b></p>
-        <p class="lead" style="background-color:cadetblue" onclick="help()"><b>Click for help.</b></p>
-        <p id="help" class="lead" style="background-color:blueviolet;" style="font-weight: 500;"><b>Help report.</b></p>
-        <br>
+        <div class="container-fluid">
+            
+            <div class="d-inline p-2 bg-primary" id = "locations">Number of locations checked is zero.</div>
+            <div class="d-inline p-2 bg-info" style="color:green;" id = "penalty">Penalty is zero.</div>
+            <div class="d-inline p-2 bg-warning"style="color:green;" onclick="help()">Click for help.</div><br><br>
+            <div class="d-inline p-2 bg-secondary" style="color:green;" id = "help">Help report</div>
+            <div class="d-inline p-2 bg-success">Click on the locations to search for treasure, beware the traps</div>
+            <br>
+            <br>
         <button type="button" class="button" style="background-color:firebrick;" onclick="resetGame()"><b>New Game</b></button>
         <br>
         <br>
@@ -155,8 +158,8 @@
             var checkCount = 0;
             var penalty = 0;
             var lastCheck = 0;
-            var treasureLocation =5;
-            var trapLocation =18;
+            var treasureLocation =5
+            var trapLocation =18
             var gameOver = false;
             function check(position) {
                 if (gameOver != true) {
@@ -213,7 +216,7 @@
                 document.getElementById("penalty").innerHTML = "Penalty is " + penalty + ".";
                 document.getElementById("help").innerHTML = result;
             }
-            function resetGame() {
+           function resetGame() {
                 treasureLocation = Math.floor(Math.random() * 25);
                 trapLocation = Math.floor(Math.random() * 25);
                 checkCount = 0
@@ -224,6 +227,7 @@
                     document.getElementById(ids[i]).src = "Tressurehuntimage.png";
                 }
             }
+            
         </script>
     </body>
     
